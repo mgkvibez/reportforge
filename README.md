@@ -20,9 +20,9 @@ Built for pentesters who would rather hack than format documents.
 
 ## Quickstart
 
-    python -m reportforge --burp sample-issues.xml --out report.pdf --md report.md --engagement "ACME quarterly assessment"
+    python -m reportforge --burp sample-issues.xml --zap alerts.json --nuclei out.jsonl --out report.pdf --md report.md
 
-9 offline tests: python -m unittest discover -s tests
+15 offline tests: python -m unittest discover -s tests
 
 ## Documentation
 
