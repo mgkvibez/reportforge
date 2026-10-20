@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<issues burpVersion="2026.1" exportTime="2026-10-20">
+  <issue>
+    <name>Cross-site scripting (reflected)</name>
+    <severity>High</severity>
+    <confidence>Certain</confidence>
+    <host ip="10.0.0.1">https://example.test</host>
+    <path>/search?q=</path>
+    <issueDetail>The q parameter reflects user input.</issueDetail>
+    <remediationBackground>Encode output.</remediationBackground>
+  </issue>
+  <issue>
+    <name>TLS certificate expiring</name>
+    <severity>Low</severity>
+    <confidence>Firm</confidence>
+    <host ip="10.0.0.1">https://example.test</host>
+    <path>/</path>
+    <issueDetail>Cert expires in 14 days.</issueDetail>
+  </issue>
+</issues>

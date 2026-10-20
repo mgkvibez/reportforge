@@ -2,7 +2,7 @@
 
 > Burp XML in. Client-ready PDF out.
 
-**Status: early development.** This repo is public research + planning until the first release.
+**Status: v0.1.0 — Burp XML in, PDF + markdown reports out.** ZAP and nuclei parsers are next on the roadmap.
 
 reportforge is a command-line pentest report generator:
 
@@ -17,6 +17,12 @@ Built for pentesters who would rather hack than format documents.
 ## Usage (planned)
 
     reportforge ./burp-export.xml -o report.pdf
+
+## Quickstart
+
+    python -m reportforge --burp sample-issues.xml --out report.pdf --md report.md --engagement "ACME quarterly assessment"
+
+9 offline tests: python -m unittest discover -s tests
 
 ## Documentation
 
