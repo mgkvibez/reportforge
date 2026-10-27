@@ -29,7 +29,24 @@ Built for pentesters who would rather hack than format documents.
 - [docs/research.md](docs/research.md) — market research and competitive landscape
 - [docs/roadmap.md](docs/roadmap.md) — development milestones toward v1.0.0
 
+
+## v0.3 — multi-project merging and branding
+
+`--burp a.xml b.xml` (and the same for `--zap`/`--nuclei`) merges many
+scans and engagements into one report: duplicate findings collapse by
+tool + title + endpoint with per-source attribution preserved, and
+conflicting severities resolve to the max with a note. `--title`,
+`--subtitle`, `--footer` and `--accent` brand both the PDF and the
+markdown. Example:
+
+```console
+python -m reportforge --burp acme.xml globex.xml --zap weekly.json \
+  --engagement "Q4 consolidated" --title "Q4 Assessment" \
+  --footer "Confidential" --out consolidated.pdf --md consolidated.md
+```
+
 ## License
+
 
 PolyForm Noncommercial 1.0.0 — personal, educational and
 noncommercial use only; commercial use, distribution or shipping
