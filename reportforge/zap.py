@@ -9,13 +9,18 @@ import json
 from .finding import Finding
 
 
-def parse_alerts(json_source):
+def parse_alerts(json_source, source_name=None):
     """Parse a ZAP alerts JSON export (path or string) into Findings."""
+    if source_name is None and isinstance(json_source, str) and not json_source.lstrip().startswith(("[", "{")):
+        source_name = json_source
+
     if isinstance(json_source, str) and not json_source.lstrip().startswith(("[", "{")):
         with open(json_source, encoding="utf-8") as fh:
             rows = json.load(fh)
     else:
         rows = json.loads(json_source) if isinstance(json_source, str) else json_source
+
+    sources = [source_name] if source_name else []
 
     findings = []
     for row in rows:
@@ -31,5 +36,6 @@ def parse_alerts(json_source):
             confidence=(row.get("confidence") or "").strip(),
             tool="OWASP ZAP",
             references=refs,
+            sources=list(sources),
         ))
     return findings

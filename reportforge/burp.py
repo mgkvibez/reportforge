@@ -14,13 +14,18 @@ def _text(node, tag):
     return (child.text or "").strip() if child is not None and child.text else ""
 
 
-def parse_issues(xml_source):
+def parse_issues(xml_source, source_name=None):
     """Parse a Burp XML export (path or string) into Findings."""
+    if source_name is None and isinstance(xml_source, str) and "<" not in xml_source:
+        source_name = xml_source
+
     if isinstance(xml_source, str) and "<" not in xml_source:
         tree = ET.parse(xml_source)
     else:
         tree = ET.ElementTree(ET.fromstring(xml_source))
     root = tree.getroot()
+
+    sources = [source_name] if source_name else []
 
     findings = []
     for node in root.findall(".//issue"):
@@ -35,5 +40,6 @@ def parse_issues(xml_source):
             remediation=_text(node, "remediationBackground"),
             confidence=_text(node, "confidence"),
             tool="Burp Suite",
+            sources=list(sources),
         ))
     return findings

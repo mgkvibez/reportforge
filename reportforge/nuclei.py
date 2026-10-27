@@ -11,12 +11,17 @@ SEVERITY_MAP = {"critical": "Critical", "high": "High", "medium": "Medium",
                 "low": "Low", "info": "Info", "informational": "Info"}
 
 
-def parse_results(jsonl_source):
+def parse_results(jsonl_source, source_name=None):
     """Parse nuclei JSONL output (path or string) into Findings."""
+    if source_name is None and isinstance(jsonl_source, str) and "\n" not in jsonl_source and not jsonl_source.startswith("{"):
+        source_name = jsonl_source
+
     if isinstance(json_source := jsonl_source, str) and "\n" not in json_source and not json_source.startswith("{"):
         lines = open(json_source, encoding="utf-8").read().splitlines()
     else:
         lines = jsonl_source.splitlines() if isinstance(jsonl_source, str) else list(jsonl_source)
+
+    sources = [source_name] if source_name else []
 
     findings = []
     for line in lines:
@@ -39,5 +44,6 @@ def parse_results(jsonl_source):
             confidence=(row.get("type") or "").strip(),
             tool="nuclei",
             references=list(refs),
+            sources=list(sources),
         ))
     return findings
