@@ -31,4 +31,6 @@ Built for pentesters who would rather hack than format documents.
 
 ## License
 
-MIT
+PolyForm Noncommercial 1.0.0 — personal, educational and
+noncommercial use only; commercial use, distribution or shipping
+in marketed products is not permitted. See [LICENSE](LICENSE).
