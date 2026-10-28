@@ -14,6 +14,13 @@ reportforge is a command-line pentest report generator:
 
 Built for pentesters who would rather hack than format documents.
 
+
+<div align="center">
+  <img src="docs/demo/report-terminal.svg" alt="reportforge report generation" width="100%">
+</div>
+
+_Three scanners, one branded PDF: cross-tool findings dedupe with per-source attribution._
+
 ## Usage (planned)
 
     reportforge ./burp-export.xml -o report.pdf

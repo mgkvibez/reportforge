@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="354" viewBox="0 0 940 354" role="img" aria-label="reportforge report generation">
+<title>reportforge: merged scanner output to branded report</title>
+<defs><linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f6feb"/><stop offset="1" stop-color="#00ff41"/></linearGradient></defs>
+<rect width="940" height="354" rx="10" fill="#0d1117" stroke="#1f2730"/>
+<rect width="940" height="34" rx="10" fill="#161b22"/><rect y="17" width="940" height="17" fill="#161b22"/>
+<circle cx="26" cy="17" r="6" fill="#ff5f56"/>
+<circle cx="48" cy="17" r="6" fill="#ffbd2e"/>
+<circle cx="70" cy="17" r="6" fill="#27c93f"/>
+<rect x="90" y="8" width="810" height="18" rx="9" fill="#0d1117" stroke="#1f2730"/>
+<text x="106" y="22" font-family="monospace" font-size="12" fill="#8b949e">mgkvibez@pentest:~ — one command, client-ready</text>
+<text x="18" y="64" font-family="monospace" font-size="14" fill="#00ff41">$ <tspan fill="#c9d1d9">python -m reportforge --burp issues-a.xml issues-b.xml --zap alerts.json \</tspan></text>
+<text x="34" y="86" font-family="monospace" font-size="14" fill="#c9d1d9">      --nuclei findings.jsonl --title "ACME Q4 Audit" \</text>
+<text x="34" y="108" font-family="monospace" font-size="14" fill="#c9d1d9">      --footer "ACME Ltd confidential" --out report.pdf --md report.md</text>
+<text x="34" y="152" font-family="monospace" font-size="14" fill="#c9d1d9">12 finding(s) -> report.pdf   [7 unique after dedupe, 5 cross-tool duplicates]</text>
+<text x="34" y="174" font-family="monospace" font-size="14" fill="#c9d1d9">markdown -> report.md</text>
+<text x="34" y="218" font-family="monospace" font-size="14" fill="#58a6ff"># ACME Q4 Audit</text>
+<text x="34" y="240" font-family="monospace" font-size="14" fill="#8b949e">_Generated 2026-10-28 · 7 findings · ruleset v0.3.0_</text>
+<text x="34" y="262" font-family="monospace" font-size="14" fill="#c9d1d9">## Executive summary</text>
+<text x="34" y="284" font-family="monospace" font-size="14" fill="#c9d1d9">No issues found by ruleset v0.3.0 in 4 categories; 3 high-severity</text>
+<text x="34" y="306" font-family="monospace" font-size="14" fill="#c9d1d9">findings from 3 tools deduped with per-source attribution.</text>
+<rect x="18" y="336" width="904" height="3" fill="url(#bar)"/>
+</svg>
